@@ -1,0 +1,70 @@
+Experiment name: nghia_CNN
+
+DSE of CIFAR-10 dataset:
+
+	conv_depth:	[2 3]
+	fc_depth:	[1 2]
+	fc_layers:	[ 32  64 128 256]
+	fc_layers_local:	['fc_depth']
+	conv_filters:	[16 32 64]
+	conv_filters_local:	['conv_depth']
+	conv_activation:	['ReLU']
+	fc_activation:	['ReLU']
+	out_activation:	['softmax']
+	conv_pooltype:	['max2d']
+	conv_pools:	[1, 2]
+	conv_pools_local:	['conv_depth']
+	conv_kernelx:	[3]
+	conv_kernely:	[3]
+	conv_kernelx_local:	['conv_depth']
+	conv_kernely_local:	['conv_depth']
+	conv_strides:	[1, 2]
+	conv_strides_local:	['conv_depth']
+	learning_rate:	[ 0.001       0.00146002  0.00213166  0.00311227  0.00454399  0.00663432
+  0.00968625  0.01414214  0.02064782  0.03014627  0.0440142   0.06426169
+  0.09382346  0.13698427  0.2       ]
+	epochs:	[250]
+	batchsize:	[300]
+	updates:	['ADAM']
+	loss:	['categorical_crossentropy']
+
+Pareto-optimal results:
+1: fc_layers: [32], conv_filters: [32, 16, 32], conv_pools: [2, 2, 2], conv_strides: [1, 1, 2], learning_rate: 0.002131663030013442, Error: 0.296960783355, Cost: 5653.29, Duration: 447s, Completed: Sun Dec  3 18:37:29 2017
+2: fc_layers: [32], conv_filters: [32, 32, 16], conv_pools: [2, 2, 2], conv_strides: [1, 1, 2], learning_rate: 0.002131663030013442, Error: 0.302745098577, Cost: 3751.13, Duration: 353s, Completed: Sun Dec  3 20:12:06 2017
+3: fc_layers: [32], conv_filters: [16, 16, 16], conv_pools: [2, 2, 2], conv_strides: [1, 1, 1], learning_rate: 0.020647823810577393, Error: 0.30500000014, Cost: 2982.06, Duration: 280s, Completed: Sun Dec  3 20:00:53 2017
+4: fc_layers: [32], conv_filters: [64, 32, 32], conv_pools: [2, 2, 2], conv_strides: [2, 1, 2], learning_rate: 0.0045439875684678555, Error: 0.309803910115, Cost: 2568.16, Duration: 285s, Completed: Sun Dec  3 20:05:56 2017
+5: fc_layers: [32], conv_filters: [32, 16, 32], conv_pools: [2, 1, 2], conv_strides: [2, 2, 2], learning_rate: 0.009686251170933247, Error: 0.313823529903, Cost: 1899.77, Duration: 181s, Completed: Sun Dec  3 19:26:08 2017
+6: fc_layers: [32], conv_filters: [16, 16, 16], conv_pools: [2, 2, 2], conv_strides: [1, 1, 1], learning_rate: 0.09382345527410507, Error: 0.349705902969, Cost: 1273.26, Duration: 190s, Completed: Sun Dec  3 20:21:32 2017
+7: fc_layers: [32], conv_filters: [16, 16, 16], conv_pools: [2, 2, 2], conv_strides: [1, 2, 1], learning_rate: 0.0014600215945392847, Error: 0.412941185867, Cost: 1223.49, Duration: 184s, Completed: Sun Dec  3 19:55:56 2017
+
+All results:
+1: fc_layers: [32, 32], conv_filters: [16, 16], conv_pools: [2, 2], conv_strides: [2, 2], learning_rate: 0.20000000298023224, Error: 0.422941188602, Cost: 3653.78, Duration: 163s, Completed: Sun Dec  3 17:54:04 2017
+2: fc_layers: [32, 64], conv_filters: [16, 32, 16], conv_pools: [2, 2, 2], conv_strides: [2, 1, 2], learning_rate: 0.0045439875684678555, Error: 0.345686290194, Cost: 3806.46, Duration: 249s, Completed: Sun Dec  3 17:58:28 2017
+3: fc_layers: [64], conv_filters: [16, 64, 32], conv_pools: [2, 2, 2], conv_strides: [2, 1, 2], learning_rate: 0.0045439875684678555, Error: 0.345098057214, Cost: 3587.06, Duration: 325s, Completed: Sun Dec  3 18:04:11 2017
+4: fc_layers: [64], conv_filters: [64, 32, 32], conv_pools: [2, 1, 2], conv_strides: [2, 2, 2], learning_rate: 0.09382345527410507, Error: 0.320000005119, Cost: 3722.77, Duration: 282s, Completed: Sun Dec  3 18:09:10 2017
+5: fc_layers: [64], conv_filters: [16, 16, 32], conv_pools: [2, 2, 1], conv_strides: [2, 2, 2], learning_rate: 0.0010000000474974513, Error: 0.404019620489, Cost: 3089.75, Duration: 211s, Completed: Sun Dec  3 18:12:58 2017
+6: fc_layers: [32], conv_filters: [16, 16, 16], conv_pools: [1, 2, 1], conv_strides: [2, 2, 1], learning_rate: 0.020647823810577393, Error: 0.34009805497, Cost: 9021.0, Duration: 224s, Completed: Sun Dec  3 18:16:58 2017
+7: fc_layers: [64], conv_filters: [32, 32, 32], conv_pools: [2, 2, 2], conv_strides: [2, 2, 1], learning_rate: 0.09382345527410507, Error: 0.333921579754, Cost: 3401.59, Duration: 261s, Completed: Sun Dec  3 18:21:34 2017
+8: fc_layers: [64, 64], conv_filters: [16, 32, 16], conv_pools: [2, 2, 2], conv_strides: [2, 2, 1], learning_rate: 0.0010000000474974513, Error: 0.379607868545, Cost: 6335.12, Duration: 256s, Completed: Sun Dec  3 18:26:06 2017
+9: fc_layers: [128], conv_filters: [16, 16, 32], conv_pools: [1, 2, 2], conv_strides: [2, 2, 2], learning_rate: 0.006634320132434368, Error: 0.344705898972, Cost: 5849.98, Duration: 206s, Completed: Sun Dec  3 18:29:48 2017
+10: fc_layers: [32], conv_filters: [32, 16, 32], conv_pools: [2, 2, 2], conv_strides: [1, 1, 2], learning_rate: 0.002131663030013442, Error: 0.296960783355, Cost: 5653.29, Duration: 447s, Completed: Sun Dec  3 18:37:29 2017
+11: fc_layers: [32, 128], conv_filters: [64, 16, 32], conv_pools: [2, 2, 2], conv_strides: [2, 1, 2], learning_rate: 0.0010000000474974513, Error: 0.334313737995, Cost: 7512.41, Duration: 324s, Completed: Sun Dec  3 18:43:09 2017
+12: fc_layers: [32], conv_filters: [16, 64, 64], conv_pools: [2, 2, 2], conv_strides: [2, 1, 1], learning_rate: 0.0010000000474974513, Error: 0.373823535793, Cost: 9502.76, Duration: 331s, Completed: Sun Dec  3 18:48:57 2017
+13: fc_layers: [32, 64], conv_filters: [64, 16, 16], conv_pools: [2, 2, 2], conv_strides: [2, 1, 1], learning_rate: 0.002131663030013442, Error: 0.310098053778, Cost: 5848.88, Duration: 286s, Completed: Sun Dec  3 18:54:01 2017
+14: fc_layers: [32], conv_filters: [64, 16, 16], conv_pools: [2, 1, 2], conv_strides: [2, 1, 1], learning_rate: 0.20000000298023224, Error: 0.301764696836, Cost: 9701.83, Duration: 266s, Completed: Sun Dec  3 18:58:43 2017
+15: fc_layers: [32], conv_filters: [16, 16, 32], conv_pools: [2, 1, 2], conv_strides: [2, 2, 2], learning_rate: 0.0045439875684678555, Error: 0.354607857325, Cost: 1739.18, Duration: 158s, Completed: Sun Dec  3 19:01:36 2017
+16: fc_layers: [32], conv_filters: [64, 32, 64], conv_pools: [2, 1, 2], conv_strides: [1, 2, 2], learning_rate: 0.06426168978214264, Error: 0.313137254294, Cost: 9961.95, Duration: 762s, Completed: Sun Dec  3 19:14:35 2017
+17: fc_layers: [32], conv_filters: [64, 32, 16], conv_pools: [2, 2, 2], conv_strides: [2, 1, 1], learning_rate: 0.006634320132434368, Error: 0.309313721517, Cost: 3624.41, Duration: 268s, Completed: Sun Dec  3 19:19:20 2017
+18: fc_layers: [32], conv_filters: [64, 16, 16], conv_pools: [2, 2, 1], conv_strides: [2, 2, 2], learning_rate: 0.0014600215945392847, Error: 0.363921587958, Cost: 1702.15, Duration: 194s, Completed: Sun Dec  3 19:22:51 2017
+19: fc_layers: [32], conv_filters: [32, 16, 32], conv_pools: [2, 1, 2], conv_strides: [2, 2, 2], learning_rate: 0.009686251170933247, Error: 0.313823529903, Cost: 1899.77, Duration: 181s, Completed: Sun Dec  3 19:26:08 2017
+20: fc_layers: [32], conv_filters: [32, 16, 32], conv_pools: [1, 2, 2], conv_strides: [2, 2, 2], learning_rate: 0.030146269127726555, Error: 0.330882361707, Cost: 1999.3, Duration: 277s, Completed: Sun Dec  3 19:31:00 2017
+21: fc_layers: [32], conv_filters: [64, 16, 16], conv_pools: [2, 2, 1], conv_strides: [2, 2, 2], learning_rate: 0.044014204293489456, Error: 0.352843156632, Cost: 1702.15, Duration: 245s, Completed: Sun Dec  3 19:35:21 2017
+22: fc_layers: [32], conv_filters: [32, 32, 16], conv_pools: [1, 1, 2], conv_strides: [2, 2, 2], learning_rate: 0.06426168978214264, Error: 0.3544117896, Cost: 3203.7, Duration: 256s, Completed: Sun Dec  3 19:39:53 2017
+23: fc_layers: [32], conv_filters: [64, 16, 32], conv_pools: [1, 1, 2], conv_strides: [2, 2, 2], learning_rate: 0.044014204293489456, Error: 0.329509822761, Cost: 5526.57, Duration: 256s, Completed: Sun Dec  3 19:44:27 2017
+24: fc_layers: [64], conv_filters: [64, 16, 32], conv_pools: [2, 2, 2], conv_strides: [1, 2, 2], learning_rate: 0.13698427379131317, Error: 0.30401962119, Cost: 3922.99, Duration: 471s, Completed: Sun Dec  3 19:52:34 2017
+25: fc_layers: [32], conv_filters: [16, 16, 16], conv_pools: [2, 2, 2], conv_strides: [2, 2, 1], learning_rate: 0.0014600215945392847, Error: 0.412941185867, Cost: 1223.49, Duration: 184s, Completed: Sun Dec  3 19:55:56 2017
+26: fc_layers: [32], conv_filters: [16, 16, 16], conv_pools: [2, 2, 2], conv_strides: [1, 2, 1], learning_rate: 0.020647823810577393, Error: 0.30500000014, Cost: 2982.06, Duration: 280s, Completed: Sun Dec  3 20:00:53 2017
+27: fc_layers: [32], conv_filters: [64, 32, 32], conv_pools: [2, 2, 2], conv_strides: [2, 1, 2], learning_rate: 0.0045439875684678555, Error: 0.309803910115, Cost: 2568.16, Duration: 285s, Completed: Sun Dec  3 20:05:56 2017
+28: fc_layers: [32], conv_filters: [32, 32, 16], conv_pools: [2, 2, 2], conv_strides: [1, 1, 2], learning_rate: 0.002131663030013442, Error: 0.302745098577, Cost: 3751.13, Duration: 353s, Completed: Sun Dec  3 20:12:06 2017
+29: fc_layers: [32, 32], conv_filters: [32, 16, 16], conv_pools: [2, 2, 2], conv_strides: [1, 1, 2], learning_rate: 0.002131663030013442, Error: 0.314411752364, Cost: 4621.92, Duration: 343s, Completed: Sun Dec  3 20:18:06 2017
+30: fc_layers: [32], conv_filters: [16, 16, 16], conv_pools: [2, 2, 2], conv_strides: [2, 1, 2], learning_rate: 0.09382345527410507, Error: 0.349705902969, Cost: 1273.26, Duration: 190s, Completed: Sun Dec  3 20:21:32 2017
